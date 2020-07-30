@@ -7,11 +7,11 @@ describe 'Shoe' do
       brands = ["Uggs", "Rainbow"]
       brands.each do |brand|
         Shoe.new(brand)
-      end
+      end                       #creating a bunch of shoes
 
       brands.each do |brand|
         expect(Shoe::BRANDS).to include(brand)
-      end
+      end                       #expecting BRANDS to keep the brands
     end
 
     it 'only keeps track of unique brands' do
@@ -19,7 +19,7 @@ describe 'Shoe' do
       brands = ["Uggs", "Rainbow", "Nike", "Nike"]
       brands.each do |brand|
         Shoe.new(brand)
-      end
+      end                       #expecting uniq BRANDS
 
       expect(Shoe::BRANDS.size).to eq(3)
     end
